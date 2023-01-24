@@ -45,7 +45,7 @@ jobs:
 
       - name: Download Image Builder
         run: |
-          wget $DOWNLOAD_BASE/releases/$VERSION/$TARGET/$VENDOR-imagebuilder-$VERSION-targets/$TARGET.Linux-x86_64.tar.xz
+          wget $DOWNLOAD_BASE/releases/$VERSION/targets/$TARGET/$VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64.tar.xz
           tar -xvf $VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64.tar.xz
           rm -rf $VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64.tar.xz
           cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64/
