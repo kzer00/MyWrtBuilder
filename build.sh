@@ -29,7 +29,7 @@ PACKAGES="acpid attr base-files bash bc bind-server blkid block-mount blockd bsd
         dnsmasq-full \
         openssh-sftp-server modeminfo-serial-fibocom \
         luci-app-modeminfo xmm-modem modeminfo \
-        luci-app-atinout luci-app-openclash "
+        luci-app-atinout-mod luci-app-openclash "
 
 # 一些自定义文件
 #FILES="files"
