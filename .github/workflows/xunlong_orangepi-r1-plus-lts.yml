@@ -16,7 +16,7 @@ env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
   VENDOR: immortalwrt
   VERSION: 21.02.3
-  TARGET: targets/rockchip/armv8
+  TARGET: rockchip/armv8
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -45,7 +45,7 @@ jobs:
 
       - name: Download Image Builder
         run: |
-          wget $DOWNLOAD_BASE/releases/$VERSION/$TARGET/$VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64.tar.xz
+          wget $DOWNLOAD_BASE/releases/$VERSION/$TARGET/$VENDOR-imagebuilder-$VERSION-targets/$TARGET.Linux-x86_64.tar.xz
           tar -xvf $VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64.tar.xz
           rm -rf $VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64.tar.xz
           cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-$TARGET.Linux-x86_64/
