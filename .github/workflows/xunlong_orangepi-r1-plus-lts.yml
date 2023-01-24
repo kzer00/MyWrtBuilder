@@ -10,7 +10,7 @@ on:
       release: 
         description: Upload the compiled image to Release
         required: false
-        default: 'false'
+        default: 'true'
 
 env:
   DOWNLOAD_BASE: https://downloads.immortalwrt.org
