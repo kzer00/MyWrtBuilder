@@ -7,7 +7,7 @@ make info
 PROFILE="Default"
 
 PACKAGES="usb-modeswitch kmod-usb-net-asix-ax88179 kmod-usb-net-asix \
-        luci-compat luci-proto-wireguad kmod-usb-net-huawei-cdc-ncm \
+        luci-compat luci-proto-wireguard kmod-usb-net-huawei-cdc-ncm \
         luci-proto-3g luci-proto-ncm  \
         luci-proto-qmi usb-modeswitch \
         atinout modeminfo-serial-xmm kmod-usb-net-rndis \
