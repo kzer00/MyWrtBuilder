@@ -6,7 +6,7 @@ make info
 # 主配置名称
 PROFILE="Default"
 
-PACKAGES="usb-modeswitch kmod-usb-net-asix-ax88179 kmod-usb-net-asix-asix \
+PACKAGES="usb-modeswitch kmod-usb-net-asix-ax88179 kmod-usb-net-asix \
         luci-compat luci-proto-wireguad kmod-usb-net-huawei-cdc-ncm \
         luci-proto-3g luci-proto-ncm  \
         luci-proto-qmi usb-modeswitch \
