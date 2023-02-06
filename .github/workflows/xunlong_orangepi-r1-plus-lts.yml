@@ -74,7 +74,7 @@ jobs:
         with:
           repo_token: ${{ secrets.all_TOKEN }}
           file_glob: true
-          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64/bin/targets/rockchip/armv8/*
+          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-rockchip-armv8.Linux-x86_64/bin/packages/rockchip/armv8/*
           asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
           tag: release-${{ env.DATE }}
           overwrite: true
