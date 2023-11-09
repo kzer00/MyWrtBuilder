@@ -26,7 +26,7 @@ PACKAGES="acpid attr base-files bash bc bind-server blkid block-mount blockd bsd
         luci-proto-3g luci-proto-bonding luci-proto-ipip luci-proto-ipv6 luci-proto-ncm  \
         luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay  \
         atinout modeminfo-serial-xmm kmod-usb-net-rndis \
-        dnsmasq-full -luci-app-cpufreq -luci-app-filetransfer -luci-app-turboacc \
+        dnsmasq-full \
         openssh-sftp-server modeminfo-serial-fibocom luci-theme-material \
         luci-app-modeminfo xmm-modem modeminfo \
         luci-app-atinout-mod luci-app-openclash "
