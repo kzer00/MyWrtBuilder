@@ -13,7 +13,7 @@ on:
        # default: 'true'
 
 env:
-  DOWNLOAD_BASE: https://openwrt.org/downloads
+  DOWNLOAD_BASE: https://downloads.openwrt.org
   VENDOR: openwrt
   VERSION: 23.05.0
   #TARGET: rockchip/armv8
