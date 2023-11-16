@@ -4,7 +4,7 @@
 make info
 
 # 主配置名称
-PROFILE="Generic EFI Boot"
+PROFILE="generic"
 
 PACKAGES="base-files ca-bundle dropbear fstools libc libgcc libustream-mbedtls logd mtd netifd opkg uci \
          uclient-fetch urandom-seed urngd busybox procd procd-ujail procd-seccomp mkf2fs e2fsprogs blkid -dnsmasq \
