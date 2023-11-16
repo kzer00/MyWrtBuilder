@@ -4,7 +4,7 @@
 make info
 
 # 主配置名称
-PROFILE="Default"
+PROFILE="Generic"
 
 PACKAGES="usb-modeswitch kmod-usb-net-asix-ax88179 kmod-usb-net-asix \
         luci-compat luci-proto-wireguard kmod-usb-net-huawei-cdc-ncm \
