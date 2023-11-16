@@ -15,7 +15,7 @@ on:
 env:
   DOWNLOAD_BASE: https://downloads.openwrt.org
   VENDOR: openwrt
-  VERSION: 22.03.3
+  VERSION: 23.05.2
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -44,28 +44,28 @@ jobs:
 
       - name: Download Image Builder
         run: |
-          wget $DOWNLOAD_BASE/releases/$VERSION/targets/armvirt/64/$VENDOR-imagebuilder-$VERSION-armvirt-64.Linux-x86_64.tar.xz
-          tar -xvf $VENDOR-imagebuilder-$VERSION-armvirt-64.Linux-x86_64.tar.xz
-          rm -rf $VENDOR-imagebuilder-$VERSION-armvirt-64.Linux-x86_64.tar.xz
-          cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-armvirt-64.Linux-x86_64/
+          wget $DOWNLOAD_BASE/releases/$VERSION/targets/armsr/armv8/$VENDOR-imagebuilder-$VERSION-armsr-armv8.Linux-x86_64.tar.xz
+          tar -xvf $VENDOR-imagebuilder-$VERSION-armsr-armv8.Linux-x86_64.tar.xz
+          rm -rf $VENDOR-imagebuilder-$VERSION-armsr-armv8.Linux-x86_64.tar.xz
+          cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-armsr-armv8.Linux-x86_64/
       
       - name: Run Patch and DIY Scripts
-        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armvirt-64.Linux-x86_64
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armsr-armv8.Linux-x86_64
         run: |
           bash scripts/builder-patch2.sh
           #bash scripts/clash.sh
           #bash scripts/zsh.sh
 
       - name: Generate Firmware
-        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armvirt-64.Linux-x86_64
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armsr-armv8.Linux-x86_64
         run: |
           bash armvirt-build.sh
 
       - name: Upload Firmware to Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.VENDOR }}-${{ env.VERSION }}-rootfs-armvirt-64-${{ env.DATETIME }}
-          path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armvirt-64.Linux-x86_64/bin/targets/armvirt/64/*
+          name: ${{ env.VENDOR }}-${{ env.VERSION }}-rootfs-armsr-armv8-${{ env.DATETIME }}
+          path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armsr-armv8.Linux-x86_64/bin/targets/armsr/armv8/*
 
       - name: Upload Firmware to Release
        # if: github.event.inputs.release == 'true'
@@ -73,7 +73,7 @@ jobs:
         with:
           repo_token: ${{ secrets.all_TOKEN }}
           file_glob: true
-          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armvirt-64.Linux-x86_64/bin/targets/armvirt/64/*
+          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armsr-armv8.Linux-x86_64/bin/targets/armsr/armv8/*
           asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
           tag: release-${{ env.DATE }}
           overwrite: true
