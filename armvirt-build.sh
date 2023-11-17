@@ -7,7 +7,7 @@ make info
 PROFILE="generic"
 
 PACKAGES="
-        -dnsmasq dnsmasq-full luci-app-atinout-mod luci-app-openclash "
+        -dnsmasq dnsmasq-full luci-app-openclash "
 
 
 make image PROFILE="$PROFILE" PACKAGES="$PACKAGES"
