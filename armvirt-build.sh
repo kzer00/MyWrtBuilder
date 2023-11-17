@@ -11,11 +11,11 @@ PACKAGES="
         kmod-brcmfmac kmod-brcmutil kmod-cfg80211 kmod-mac80211 wpad-basic \
         luci luci-compat luci-lib-ipkg luci-theme-material \
         luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system  \
-        luci-proto-3g luci-proto-ncm  \
-        luci-proto-wireguard luci-proto-qmi usb-modeswitch \
+        lluci-proto-ncm  \
+        luci-proto-qmi usb-modeswitch \
         kmod-usb-net-rndis -dnsmasq dnsmasq-full \
-        openssh-sftp-server luci-app-openclash luci-app-internet-detector\
-        luci-theme-neobirdkawe xmm-modem luci-app-modeminfo  \ "
+        openssh-sftp-server luci-app-openclash \
+        luci-theme-neobirdkawe  \ "
 #FILES="files"
 
 # 禁用 openssh-server 的 sshd 服务和 docker 的 dockerd 服务以防止冲突
