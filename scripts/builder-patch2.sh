@@ -14,6 +14,6 @@ cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-armsr-armv8.Linux-x86_64
     wget -P files/etc/ https://raw.githubusercontent.com/kzer00/hoam/main/amlogic-s9xxx/common-files/rootfs/etc/banner
     wget -P files/etc/ https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/profile && chmod +x /etc/profile
     wget -P files/etc/ https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/shadow
-    wget -P files/usr/bin https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/sysinfo && chmod +x /files/usr/bin/sysinfo
+    #wget -P files/usr/bin https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/sysinfo && chmod +x /files/usr/bin/sysinfo
 echo "src/gz custom_arch https://raw.githubusercontent.com/indowrt/indowrt/main/aarch64_generic" >> repositories.conf 
 sed -i 's/option check_signature/# option check_signature/g' repositories.conf
