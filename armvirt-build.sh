@@ -16,6 +16,11 @@ PACKAGES="
         kmod-usb-net-rndis -dnsmasq dnsmasq-full \
         openssh-sftp-server luci-app-openclash luci-app-internet-detector\
         luci-theme-neobirdkawe xmm-modem luci-app-modeminfo  \ "
+#FILES="files"
 
+# 禁用 openssh-server 的 sshd 服务和 docker 的 dockerd 服务以防止冲突
+#DISABLED_SERVICES="sshd dockerd"
+
+#make image PROFILE="$PROFILE" PACKAGES="$PACKAGES" FILES="$FILES" DISABLED_SERVICES="$DISABLED_SERVICES"
 
 make image PROFILE="$PROFILE" PACKAGES="$PACKAGES"
