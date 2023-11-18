@@ -10,7 +10,7 @@ PACKAGES="
         hostapd-common iw iwinfo \
         kmod-brcmfmac kmod-brcmutil kmod-cfg80211 kmod-mac80211 \
         luci luci-compat luci-lib-ipkg luci-theme-material \
-        luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system  \
+        luci-mod-status luci-mod-system  \
         luci-proto-ncm  \
         luci-proto-qmi usb-modeswitch \
         kmod-usb-net-rndis -dnsmasq dnsmasq-full \
