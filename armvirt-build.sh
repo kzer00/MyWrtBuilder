@@ -7,6 +7,9 @@ make info
 PROFILE="generic"
 
 PACKAGES="
+        base-files ca-bundle dropbear fstools libc libgcc libustream-mbedtls logd mtd netifd opkg \
+        uci uclient-fetch urandom-seed urngd busybox procd procd-ujail procd-seccomp mkf2fs e2fsprogs blkid \
+        firewall4 nftables kmod-nft-offload odhcp6c odhcpd-ipv6only ppp ppp-mod-pppoe \
         luci-theme-material \
         luci-proto-ncm  \
         luci-proto-qmi usb-modeswitch \
