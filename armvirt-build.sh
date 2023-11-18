@@ -15,7 +15,7 @@ PACKAGES="
         luci-proto-qmi usb-modeswitch luci-compat kmod-mac80211 \
         kmod-usb-net-rndis -dnsmasq dnsmasq-full \
         openssh-sftp-server luci-app-openclash \
-        luci-theme-neobirdkawe luci-app-tiny-* "
+        luci-theme-neobirdkawe luci-app-tinyfm "
 #FILES="files"
 
 # 禁用 openssh-server 的 sshd 服务和 docker 的 dockerd 服务以防止冲突
