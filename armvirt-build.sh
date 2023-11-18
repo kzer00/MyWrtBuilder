@@ -7,7 +7,7 @@ make info
 PROFILE="generic"
 
 PACKAGES="
-        base-files ca-bundle dropbear fstools libc libgcc libustream-mbedtls logd mtd netifd opkg \
+        -base-files ca-bundle dropbear fstools libc libgcc libustream-mbedtls logd mtd netifd opkg \
         uci uclient-fetch urandom-seed urngd busybox procd procd-ujail procd-seccomp mkf2fs e2fsprogs blkid \
         firewall4 nftables kmod-nft-offload odhcp6c odhcpd-ipv6only ppp ppp-mod-pppoe \
         luci-theme-material \
@@ -15,7 +15,7 @@ PACKAGES="
         luci-proto-qmi usb-modeswitch \
         kmod-usb-net-rndis -dnsmasq dnsmasq-full \
         openssh-sftp-server luci-app-openclash \
-        luci-theme-neobirdkawe  \ "
+        luci-theme-neobirdkawe "
 #FILES="files"
 
 # 禁用 openssh-server 的 sshd 服务和 docker 的 dockerd 服务以防止冲突
