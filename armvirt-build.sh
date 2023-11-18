@@ -7,10 +7,7 @@ make info
 PROFILE="generic"
 
 PACKAGES="
-        hostapd-common iw iwinfo \
-        kmod-brcmfmac kmod-brcmutil kmod-cfg80211 kmod-mac80211 \
-        luci luci-compat luci-lib-ipkg luci-theme-material \
-        luci-mod-status luci-mod-system  \
+        luci-theme-material \
         luci-proto-ncm  \
         luci-proto-qmi usb-modeswitch \
         kmod-usb-net-rndis -dnsmasq dnsmasq-full \
