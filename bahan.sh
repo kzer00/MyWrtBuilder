@@ -4,7 +4,7 @@
 make info
 
 # 主配置名称
-PROFILE="xunlong_orangepi_zero_plus"
+PROFILE="xunlong_orangepi-zero-plus"
 
 PACKAGES="
         luci-proto-3g luci-proto-bonding luci-proto-ipip luci-proto-ipv6 luci-proto-ncm  \
