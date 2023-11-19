@@ -49,7 +49,7 @@ jobs:
           cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64/
       
       - name: Run Patch and DIY Scripts
-        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-armsr-cortexa53.Linux-x86_64
+        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
         run: |
           bash scripts/builder-patch3.sh
           #bash scripts/clash.sh
