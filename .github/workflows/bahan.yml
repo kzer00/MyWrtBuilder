@@ -59,7 +59,7 @@ jobs:
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
         run: |
-          bash build.sh
+          bash bahan.sh
 
       - name: Upload Firmware to Artifacts
         uses: actions/upload-artifact@v2
