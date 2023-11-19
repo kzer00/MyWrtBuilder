@@ -1,35 +1,36 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Generate sunxi_cortex-a53 Firmware
+name: Generate xunlong_orangepi-zero-plus Firmware
+
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      release: 
-        description: Description Release
-        required: false
-        default: 'false'
+    #inputs:
+     # release: 
+      #  description: Upload the compiled image to Release
+       # required: false
+       # default: 'true'
 
 env:
   DOWNLOAD_BASE: https://downloads.openwrt.org
   VENDOR: openwrt
   VERSION: 23.05.2
+  #TARGET: sunxi/cortexa53
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   Generate:
     # The type of runner that the job will run on
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Initialization Environment
         run: |
           sudo apt-get -qq update
-          sudo apt-get -qq install build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3 qemu-utils mkisofs
-
+          sudo apt-get -qq install build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python qemu-utils mkisofs
       - name: Setup Environment Variables
         run: |
           echo "DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
@@ -58,16 +59,16 @@ jobs:
       - name: Generate Firmware
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
         run: |
-          bash bahan.sh
+          bash build.sh
 
       - name: Upload Firmware to Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.VENDOR }}-${{ env.VERSION }}-sunxi-cortexa53-${{ env.DATETIME }}
+          name: ${{ env.VENDOR }}-${{ env.VERSION }}-r1plus_lts_rockchip_armv8-${{ env.DATETIME }}
           path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/cortexa53/*
 
       - name: Upload Firmware to Release
-        if: github.event.inputs.release == 'true'
+       # if: github.event.inputs.release == 'true'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.all_TOKEN }}
