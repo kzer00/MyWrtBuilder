@@ -5,11 +5,11 @@ name: Generate sunxi_cortex-a53 Firmware
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    #inputs:
-     # release: 
+      inputs:
+       release: 
       #  description: Upload the compiled image to Release
-       # required: false
-       # default: 'true'
+       required: false
+       default: 'true'
 
 env:
   DOWNLOAD_BASE: https://downloads.openwrt.org
@@ -74,5 +74,5 @@ jobs:
           file_glob: true
           file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/corexa53/*
           asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
-          tag: cortexa53-${{ env.DATE }}
+          tag: release-${{ env.DATE }}
           overwrite: true
