@@ -7,13 +7,15 @@ make info
 PROFILE="xunlong_orangepi-zero-plus"
 
 PACKAGES="
-        luci-proto-3g luci-proto-bonding luci-proto-ipip luci-proto-ipv6 luci-proto-ncm  \
-        luci-proto-openconnect luci-proto-ppp luci-proto-qmi   \
-        atinout modeminfo-serial-xmm kmod-usb-net-rndis \
-        -dnsmasq dnsmasq-full \
-        openssh-sftp-server modeminfo-serial-fibocom luci-theme-material \
-        luci-app-modeminfo xmm-modem modeminfo \
-        luci-app-atinout-mod luci-app-openclash "
+        hostapd-common iw iwinfo \
+        kmod-cfg80211 kmod-mac80211 wpa-cli wpad-basic \
+        luci luci-compat luci-lib-ipkg luci-theme-material \
+        luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system  \
+        luci-proto-3g luci-proto-ncm usbutils luci-compat \
+        luci-proto-wireguard luci-proto-qmi usb-modeswitch luci-app-ttyd \
+        kmod-usb-net-rndis -dnsmasq dnsmasq-full \
+        openssh-sftp-server luci-app-openclash luci-app-openclash\
+        luci-theme-neobirdkawe xmm-modem luci-app-modeminfo "
 
 # 一些自定义文件
 #FILES="files"
