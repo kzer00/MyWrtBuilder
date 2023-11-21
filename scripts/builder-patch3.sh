@@ -15,7 +15,7 @@ cd $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64
     wget -P files/etc/ https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/profile
     wget -P files/etc/opkg/ https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/customfeeds.conf
     wget -P files/etc/ https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/shadow
-    #svn export https://github.com/kzer00/repo/trunk/aarch64_cortex-a53/core /files/etc/openclash/core && chmod +x /files/etc/openclash/core/*
+    svn export https://github.com/kzer00/repo/trunk/aarch64_cortex-a53/core /files/etc/openclash/core
     wget -P files/usr/bin https://raw.githubusercontent.com/kzer00/repo/main/aarch64_cortex-a53/sysinfo
     #echo "src/gz custom_arch https://raw.githubusercontent.com/indowrt/indowrt/main/aarch64_cortex-a53" >> /files/etc/opkg/customfeeds.conf 
     echo "src/gz custom_arch https://raw.githubusercontent.com/indowrt/indowrt/main/aarch64_cortex-a53" >> repositories.conf 
