@@ -13,7 +13,7 @@ PACKAGES="
         luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system  \
         luci-proto-3g luci-proto-ncm usbutils luci-compat \
         luci-proto-wireguard luci-proto-qmi usb-modeswitch luci-app-ttyd \
-        kmod-usb-net-rndis -dnsmasq dnsmasq-full \
+        kmod-usb-net-rndis -dnsmasq dnsmasq-full luci-theme-material\
         openssh-sftp-server luci-proto-xmm luci-app-openclash luci-app-openclash\
         luci-theme-neobirdkawe xmm-modem luci-app-modeminfo "
 
