@@ -7,7 +7,7 @@ make info
 PROFILE="xunlong_orangepi-zero-plus"
 
 PACKAGES="
-        hostapd-common iw iwinfo luci-app-tinyfm \
+        hostapd-common iw iwinfo \
         kmod-cfg80211 kmod-mac80211 wpa-cli wpad-basic \
         luci luci-compat luci-lib-ipkg luci-theme-material \
         luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system  \
