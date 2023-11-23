@@ -7,11 +7,11 @@ make info
 PROFILE="xunlong_orangepi-zero-plus"
 
 PACKAGES="
-        hostapd-common iw iwinfo \
-        kmod-cfg80211 kmod-mac80211 wpa-cli wpad-basic \
-        luci luci-compat luci-lib-ipkg luci-theme-material \
+        hostapd-common iw iwinfo modeminfo-serial-xmm modeminfo-serial-fibocom \
+        kmod-cfg80211 kmod-mac80211 wpa-cli wpad-basic kmod-usb-net-huawei-cdc-ncm\
+        luci luci-compat luci-lib-ipkg luci-theme-material usbutils\
         luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system  \
-        luci-proto-3g luci-proto-ncm usbutils luci-compat \
+        luci-proto-3g luci-proto-ncm usbutils luci-compat usb-modeswitch\
         luci-proto-wireguard luci-proto-qmi usb-modeswitch luci-app-ttyd \
         kmod-usb-net-rndis -dnsmasq dnsmasq-full luci-theme-material\
         openssh-sftp-server luci-proto-xmm luci-app-openclash luci-app-openclash\
