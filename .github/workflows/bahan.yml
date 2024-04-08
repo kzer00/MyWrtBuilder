@@ -15,7 +15,7 @@ on:
 env:
   DOWNLOAD_BASE: https://downloads.openwrt.org
   VENDOR: openwrt
-  VERSION: 23.05.2
+  VERSION: snapshots
   #TARGET: sunxi/cortexa53
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -44,10 +44,14 @@ jobs:
 
       - name: Download Image Builder
         run: |
-          wget $DOWNLOAD_BASE/releases/$VERSION/targets/sunxi/cortexa53/$VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64.tar.xz
-          tar -xvf $VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64.tar.xz
-          rm -rf $VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64.tar.xz
-          cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64/
+         # wget $DOWNLOAD_BASE/releases/$VERSION/targets/sunxi/cortexa53/$VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64.tar.xz
+          wget $DOWNLOAD_BASE/$VERSION/targets/sunxi/cortexa53/$VENDOR-imagebuilder-sunxi-cortexa53.Linux-x86_64.tar.xz
+         # tar -xvf $VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64.tar.xz
+          tar -xvf $VENDOR-imagebuilder-sunxi-cortexa53.Linux-x86_64.tar.xz
+         # rm -rf $VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64.tar.xz
+          rm -rf $VENDOR-imagebuilder-sunxi-cortexa53.Linux-x86_64.tar.xz
+         # cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-$VERSION-sunxi-cortexa53.Linux-x86_64/
+          cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-sunxi-cortexa53.Linux-x86_64/
       
       - name: Run Patch and DIY Scripts
         working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
@@ -64,16 +68,20 @@ jobs:
       - name: Upload Firmware to Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ env.VENDOR }}-${{ env.VERSION }}-r1plus_lts_rockchip_armv8-${{ env.DATETIME }}
-          path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/cortexa53/*
-
+          #name: ${{ env.VENDOR }}-${{ env.VERSION }}-r1plus_lts_rockchip_armv8-${{ env.DATETIME }}
+          #path: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/cortexa53/
+           name: ${{ env.VENDOR }}-r1plus_lts_rockchip_armv8-${{ env.DATETIME }}
+           path: ${{ env.VENDOR }}-imagebuilder-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/cortexa53/*
       - name: Upload Firmware to Release
        # if: github.event.inputs.release == 'true'
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.all_TOKEN }}
           file_glob: true
-          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/cortexa53/*
+         # file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/cortexa53/*
+         # asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
+        #  tag: release-${{ env.DATE }}
+          file: ${{ env.VENDOR }}-imagebuilder-sunxi-cortexa53.Linux-x86_64/bin/targets/sunxi/cortexa53/*
           asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
           tag: release-${{ env.DATE }}
           overwrite: true
