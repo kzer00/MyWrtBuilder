@@ -4,7 +4,7 @@
 make info
 
 # 主配置名称
-PROFILE="xunlong_orangepi-zero-plus"
+PROFILE="xunlong_orangepi-zero2"
 
 PACKAGES="\
         iw-full iwinfo hostapd modeminfo-serial-xmm modeminfo-serial-fibocom \
@@ -14,8 +14,8 @@ PACKAGES="\
         luci-proto-3g luci-proto-ncm usbutils luci-compat usb-modeswitch\
         luci-proto-wireguard luci-proto-qmi usb-modeswitch luci-app-ttyd \
         kmod-usb-net-rndis -dnsmasq dnsmasq-full luci-theme-material\
-        openssh-sftp-server luci-proto-xmm luci-app-openclash luci-app-openclash \
-        luci-theme-neobirdkawe xmm-modem luci-app-modeminfo "
+        openssh-sftp-server luci-proto-xmm luci-app-openclash \
+        xmm-modem luci-app-modeminfo "
 
 # 一些自定义文件
 FILES="files"
