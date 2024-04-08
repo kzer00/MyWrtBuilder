@@ -62,7 +62,8 @@ jobs:
           #bash scripts/zsh.sh
 
       - name: Generate Firmware
-        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
+        #working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
+        working-directory: ${{ env.VENDOR }}-imagebuilder-sunxi-cortexa53.Linux-x86_64
         run: |
           bash bahan.sh
 
