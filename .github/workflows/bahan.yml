@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Baham Pi Zero2
+name: Bahan Pi Zero2
 
 # Controls when the workflow will run
 on:
@@ -54,7 +54,8 @@ jobs:
           cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/$VENDOR-imagebuilder-sunxi-cortexa53.Linux-x86_64/
       
       - name: Run Patch and DIY Scripts
-        working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
+       # working-directory: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-sunxi-cortexa53.Linux-x86_64
+        working-directory: ${{ env.VENDOR }}-imagebuilder-sunxi-cortexa53.Linux-x86_64
         run: |
           bash scripts/builder-patch3.sh
           bash scripts/clash.sh
