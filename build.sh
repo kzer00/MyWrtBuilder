@@ -8,11 +8,11 @@ PROFILE="xunlong_orangepi-r1-plus-lts"
 
 PACKAGES="
         luci-proto-3g luci-proto-xmm luci-proto-ipip luci-proto-ipv6 luci-proto-ncm  \
-        luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay  \
+        luci-proto-xmm luci-proto-wireguard luci-proto-qmi luci-proto-relay  \
         atinout modeminfo-serial-xmm kmod-usb-net-rndis \
-        -dnsmasq dnsmasq-full luci-compat luci \
+        -dnsmasq dnsmasq-full luci-compat luci usbutils \
         openssh-sftp-server modeminfo-serial-fibocom luci-theme-material \
-        luci-app-modeminfo xmm-modem modeminfo \
+        luci-app-modeminfo luci-app-3ginfo-lite xmm-modem modeminfo luci-compat luci-app-passwall2 \
         luci-app-atinout-mod luci-app-openclash "
 
 # 一些自定义文件
